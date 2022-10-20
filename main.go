@@ -35,6 +35,7 @@ func repeatMe(words ...string) {
 func main() {
 	name := "seunghyun"
 	// var name string = "seunghyun"
+	something.SayHi()
 
 	totalLength, upperName := lenAndUpper(name)
 	totalLength2, upperName2 := lenAndUpper2(name)

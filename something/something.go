@@ -2,6 +2,10 @@ package something
 
 import "fmt"
 
+func SayHi() {
+	fmt.Println("Hi")
+}
+
 func sayBye() {
 	fmt.Println("Bye")
 }
