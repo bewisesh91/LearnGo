@@ -76,6 +76,7 @@ func canIDrink3(age int) bool {
 	return false
 }
 
+// struct
 type person struct {
 	name    string
 	age     int
@@ -147,6 +148,7 @@ func main() {
 		fmt.Println(key, value)
 	}
 
+	// using struct
 	favFood := []string{"hi", "yo"}
 	seunghyun := person{name: "seunghyun", age: 31, favFood: favFood}
 	fmt.Println(seunghyun)
