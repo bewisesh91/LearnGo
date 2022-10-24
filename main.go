@@ -84,6 +84,7 @@ type person struct {
 }
 
 func main() {
+	// 초기화 선언 방법 두가지
 	name := "seunghyun"
 	result := superAdd(1, 2, 3, 4, 5)
 	// var name string = "seunghyun"
