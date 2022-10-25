@@ -130,13 +130,13 @@ func main() {
 	*h = 10 // *을 사용하면 포인터로 값을 바꿀 수 있다.
 	fmt.Println(g)
 
-	// Arrays
+	// Arrays : 일반적인 개념의 Array
 	names := [5]string{"seung", "hyun", "mun"}
 	names[3] = "learns"
 	names[4] = "go lang"
 	fmt.Println(names)
 
-	// Slices
+	// Slices : Python의 List 같은 느낌?
 	names2 := []string{"seung", "hyun", "mun"}
 	names2 = append(names2, "leanrs", "go lang")
 	fmt.Println(names2)
