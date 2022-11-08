@@ -1,5 +1,6 @@
 package something
 
+// to use package, define the name
 import "fmt"
 
 func SayHi() {
