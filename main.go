@@ -1,17 +1,88 @@
 package main
 
 import (
+	"errors"
 	"fmt"
-
-	"github.com/bewisesh91/learngo/accounts"
+	"net/http"
 )
 
+type requestResult struct {
+	url    string
+	status string
+}
+
+var errRequestFailed = errors.New("Request failed")
+
 func main() {
-	account := accounts.NewAccount("bewisesh")
-	account.Deposit(100000)
-	err := account.Withdraw(1000000)
-	if err != nil {
-		fmt.Println(err)
+	results := make(map[string]string)
+	c := make(chan requestResult)
+
+	urls := []string{
+		"https://www.airbnb.com/",
+		"https://www.google.com/",
+		"https://www.amazon.com/",
+		"https://www.instagram.com/",
+		"https://www.naver.com/",
 	}
-	fmt.Println(account.Balance())
+
+	for _, url := range urls {
+		// Goroutines 적용 전
+		// result := "OK"
+		// err := hitURL(url)
+		// if err != nil {
+		// 	result = "FAILED"
+		// }
+		// results[url] = result
+
+		// Goroutines 적용 후
+		go hitURL(url, c)
+	}
+
+	for i := 0; i < len(urls); i++ {
+		result := <-c
+		results[result.url] = result.status
+	}
+
+	for url, status := range results {
+		fmt.Println(url, status)
+	}
+
+	// for url, result := range results {
+	// 	fmt.Println(url, result)
+	// }
+
+	// c := make(chan bool)
+	// people := [2]string{"bewise", "sh"}
+	// for _, person := range people {
+	// 	go isSmart(person, c)
+	// }
+	// result := <-c
+	// fmt.Println(result)
+}
+
+// func isSmart(person string, c chan bool) {
+// 	time.Sleep(time.Second * 5)
+// 	c <- true
+// }
+
+// Goroutines 적용 전
+// func hitURL(url string) error {
+// 	fmt.Println("Checking:", url)
+// 	response, err := http.Get(url)
+// 	if err != nil || response.StatusCode >= 400 {
+// 		return errRequestFailed
+// 	}
+// 	return nil
+// }
+
+// Goroutines 적용 후
+func hitURL(url string, c chan<- requestResult) {
+	fmt.Println("Checking:", url)
+	response, err := http.Get(url)
+	status := "OK"
+	if err != nil || response.StatusCode >= 400 {
+		c <- requestResult{url: url, status: "FAILED"}
+	} else {
+		c <- requestResult{url: url, status: status}
+	}
 }
