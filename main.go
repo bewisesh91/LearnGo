@@ -75,6 +75,7 @@ func main() {
 // 	return nil
 // }
 
+// Goroutins CPU 수에 따라 적용할 수 있는 방법이 다름
 // Goroutines 적용 후
 func hitURL(url string, c chan<- requestResult) {
 	fmt.Println("Checking:", url)
