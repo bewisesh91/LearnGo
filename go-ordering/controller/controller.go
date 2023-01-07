@@ -3,8 +3,8 @@ package controller
 //controller.go : 실제 비지니스 로직 및 프로세스가 처리후 결과 전송
 import (
 	"fmt"
-	"go-ordering/logger"
-	"go-ordering/model"
+	"LearnGo/go-ordering/logger"
+	"LearnGo/go-ordering/model"
 	"net/http"
 
 	"github.com/gin-gonic/gin"

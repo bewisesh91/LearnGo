@@ -3,14 +3,14 @@ package router
 //router.go : api 전체 인입에 대한 관리 및 구성을 담당하는 파일
 import (
 	"fmt"
-	ctl "go-ordering/controller"
-	logger "go-ordering/logger"
+	ctl "LearnGo/go-ordering/controller"
+	logger "LearnGo/go-ordering/logger"
 
 	"github.com/gin-gonic/gin"
 	swgFiles "github.com/swaggo/files"
 	ginSwg "github.com/swaggo/gin-swagger"
 
-	"go-ordering/docs" //swagger에 의해 자동 생성된 package
+	"LearnGo/go-ordering/docs" //swagger에 의해 자동 생성된 package
 )
 
 type Router struct {

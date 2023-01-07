@@ -1,0 +1,6 @@
+{"level":"DEBUG","time":"2023-01-05T14:50:39.974+0900","caller":"logger/logger.go:54","msg":"debug","-":"ready server.... "}
+{"level":"INFO","time":"2023-01-05T14:50:39.980+0900","caller":"logger/logger.go:61","msg":"info","-":""}
+{"level":"INFO","time":"2023-01-05T14:50:39.980+0900","caller":"logger/logger.go:61","msg":"info","-":""}
+{"level":"WARN","time":"2023-01-05T14:50:45.635+0900","caller":"logger/logger.go:68","msg":"warn","-":""}
+{"level":"INFO","time":"2023-01-05T14:50:50.637+0900","caller":"logger/logger.go:61","msg":"info","-":""}
+{"level":"INFO","time":"2023-01-05T14:50:50.637+0900","caller":"logger/logger.go:61","msg":"info","-":""}

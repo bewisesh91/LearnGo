@@ -3,7 +3,7 @@ package model
 //model.go : db에 접속해 데이터를 핸들링, 결과 전달
 import (
 	"context"
-	"go-ordering/logger"
+	"LearnGo/go-ordering/logger"
 	"time"
 
 	"fmt"

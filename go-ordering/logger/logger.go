@@ -9,7 +9,7 @@ import (
 	"go.uber.org/zap/zapcore"
 	"gopkg.in/natefinch/lumberjack.v2"
 
-	conf "go-ordering/conf"
+	conf "LearnGo/go-ordering/conf"
 
 	"net"
 	"net/http"
